@@ -1,0 +1,13 @@
+<tr id="<%= dom_id task %>">
+  <th scope="row">
+    <%= form_for task do |f| %>
+      <%= check_box_tag :mark_complete, onchange: "this.form.submit();" %>
+    <% end %>
+  </th>
+  <td>
+    <strong><%= task.title %></strong>
+    <p class="form-text"><%= task.sub_title %></p>
+  </td>
+  <td><%= priority_element(task.priority).html_safe %></td>
+  <td><%= task.due_date %></td>
+</tr>
